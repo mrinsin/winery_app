@@ -10,5 +10,16 @@
   <%= @winery.location %>
 </p>
 
+<p>
+  <strong>Wines:</strong>
+  <ul>
+    <% @winery.wines.each do |wine| %>
+
+    <li> <a href="/wines/<%= wine.id %>"><%= wine.name %> </a></li>
+
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_winery_path(@winery) %> |
 <%= link_to 'Back', wineries_path %>

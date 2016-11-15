@@ -10,15 +10,22 @@ class WinesController < ApplicationController
   # GET /wines/1
   # GET /wines/1.json
   def show
+
   end
 
   # GET /wines/new
   def new
     @wine = Wine.new
+    @wineries_for_select = Winery.all.map do |winery|
+      [winery.name, winery.id]
+    end
   end
 
   # GET /wines/1/edit
   def edit
+    @wineries_for_select = Winery.all.map do |winery|
+      [winery.name, winery.id]
+    end
   end
 
   # POST /wines

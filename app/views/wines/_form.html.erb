@@ -27,8 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :winery_id %>
-    <%= f.text_field :winery_id %>
+    <%= select(:wine, :winery_id, @wineries_for_select) %>
   </div>
 
   <div class="actions">
